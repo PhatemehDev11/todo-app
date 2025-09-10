@@ -1,8 +1,8 @@
-function mainPage() {
+function  MainPage() {
 return(
     <>
     </>
 )
 }
 
-export default mainPage;
+export default MainPage;

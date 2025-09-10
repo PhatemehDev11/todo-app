@@ -1,6 +1,6 @@
-
+import { BrowserRouter } from 'react-router-dom';
 import './App.css'
-
+import Sidebar from './component/sidebar/sidebar'
 
 
 function App() {
@@ -8,11 +8,12 @@ function App() {
 
   return (
     <>
-      <div>
-      <sidebar/>
-      </div>
+    <BrowserRouter>
+    <Sidebar/>
+    </BrowserRouter>
+     
     </>
   )
 }
 
-export default App
+export default App;
