@@ -9,7 +9,7 @@ function Layout() {
     <>
       <div className='w-[100%]  h-[50rem] bg-sky-900 h-[100%]  flex p-[1rem] m-0  gap-2'>
           <Sidebar />
-          <div  className='w-[85%]  h-[100%] rounded-3xl  bg-red-100   flex'>
+          <div  className='w-[100%]  md:w-[80%] h-[100%] rounded-3xl  bg-red-100   flex'>
             <Outlet/>
           </div>
       </div>
