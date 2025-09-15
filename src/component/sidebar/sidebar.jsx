@@ -1,17 +1,28 @@
 import { Link, NavLink } from "react-router-dom";
 import React from "react";
-function Sidebar({isOpen}) {
+function Sidebar({ isOpen, isClose }) {
   const baseClasses =
     `hover:bg-sky-700   w-[100%]  p-2  rounded-3xl  text-center  duration-200  hover:bg-sky-600`;
 
 
   return (
     <>
-      <div className={`bg-sky-900 h-[100%]   w-[20%]   flex flex-col   text-xl  
-        text-white gap-4  p-3  border-2  border-red-100   rounded-3xl md:translate-x-0
+      {/* overlay */}
+      <div
+        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity
+           duration-300 md:hidden ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
+        onClick={isClose}
+      ></div>
+
+
+
+      {/* sidebar */}
+      <div className={`bg-sky-900 h-[100%] w-[80%]  md:w-[20%]   flex flex-col   text-xl  
+        text-white gap-4  p-3  border-2  border-red-100   md:rounded-3xl md:translate-x-0
         fixed  top-0 left-0 z-50  transform transition-transform  duration-300 md:relative 
-        ${isOpen? 'translate-x-0':
-          '-translate-x-[10rem]'
+        ${isOpen ? 'translate-x-0' :
+          '-translate-x-[30rem]'
         } `}>
 
         <NavLink to="/" className={({ isActive }) =>
