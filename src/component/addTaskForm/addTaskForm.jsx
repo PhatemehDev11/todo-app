@@ -3,7 +3,7 @@ import BaseButton from "../common/BaseButton";
 function AddTaskForm() {
     return (
         <>
-        <div  className="bg-sky-100 rounded-lg shadow-md p-2 m-7">
+        <div  className="md:w-[25%]  h-[20rem] bg-sky-100 rounded-lg shadow-md ">
         <form
                 className="flex flex-col gap-3 p-4   "
             >

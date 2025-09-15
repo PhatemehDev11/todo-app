@@ -8,7 +8,7 @@ return(
     <>
     <div  className="w-full">
     <SearchBar/>
-    <div  className="w-full  h-auto md:flex mt-10  md:mt-2 ">
+    <div  className="w-full  h-auto md:flex  md:gap-5  p-7 mt-10  md:mt-2 ">
     <TaskList/>
     <AddTaskForm/>
     </div>
