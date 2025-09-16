@@ -25,7 +25,7 @@ function Sidebar({ isOpen, isClose }) {
         text-white gap-4  p-3  border-2  border-red-100   md:rounded-3xl md:translate-x-0
         fixed  top-0 left-0 z-50  transform transition-transform  duration-300 md:relative 
         ${isOpen ? 'translate-x-0' :
-          '-translate-x-[30rem]'
+          '-translate-x-[40rem]'
         } `}>
           <h2 class="text-2xl font-bold mb-4  text-white ml-5 leading-10 h-[1rem] flex ">
             <MdMenuOpen  size={40}/>
