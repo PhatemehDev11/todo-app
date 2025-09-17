@@ -7,7 +7,7 @@ function AddTaskForm() {
         <form
                 className="flex flex-col gap-3 p-4   "
             >
-                   <h2 class="text-xl  font-bold mb-4   text-sky-900">Add Task</h2>
+                   <h2 className="text-xl  font-bold mb-4   text-sky-900">Add Task</h2>
                 <input
                     type="text"
                     placeholder="Task Name"
