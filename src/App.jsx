@@ -1,20 +1,17 @@
-
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Outlet } from 'react-router-dom';
 import './App.css'
+import Sidebar from './component/sidebar/sidebar'
+import MainPage from './page/mainPage';
+import AppRouter from './Router/react-App-Router';
 
 function App() {
 
 
   return (
     <>
-      <div>
-      <h1 className="bg-red-100   text-3xl font-bold underline">
-      Hello world!
-    </h1>
-      </div>
+     <AppRouter/>
     </>
   )
 }
 
-export default App
+export default App;
