@@ -1,17 +1,30 @@
 import AddTaskForm from "../component/addTaskForm/addTaskForm";
 import SearchBar from "../component/searchBar/searchBar";
 import TaskList from "../component/TaskList/TaskList";
-import {  useState } from "react";
+import {  useState, useEffect } from "react";
 import TaskData from "../data/Tasks.json"
 
 function  MainPage() {
-const [tasks , setTasks] = useState(TaskData);
+
+const [tasks , setTasks] = useState(()=>{
+  const saved = localStorage.getItem("tasks");
+  return saved ? JSON.parse(saved) : TaskData;
+});
+
 const [Search, setSearch] = useState("");
+
 
 const filteredTasks = tasks.filter(task =>
   task.title.toLowerCase().includes(Search.toLowerCase())
 );
+
+
+
 console.log("Filtered tasks:", filteredTasks);
+
+useEffect(() => {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}, [tasks]);
 return(
     <>
     <div  className="w-full">
