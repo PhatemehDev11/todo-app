@@ -7,32 +7,31 @@ function AddTaskForm({ tasks, setTasks }) {
 
 
     const handleSubmit = (e) => {
-        e.preventDefault(); 
-      
+        e.preventDefault();
+
         if (!title.trim()) {
-            return; 
-          }
-      
+            return;
+        }
+
         const newTask = {
-          id: Date.now(),
-          title,
-          status,
+            id: Date.now(),
+            title,
+            status,
         };
-      
+
         setTasks([...tasks, newTask]);
-      
         setTitle("");
         setStatus("not-started");
-      };
+    };
 
 
 
-  
+
     return (
         <>
             <div className="md:w-[25%]  h-[20rem] bg-sky-100 rounded-lg shadow-md ">
                 <form
-                     onSubmit={handleSubmit}
+                    onSubmit={handleSubmit}
                     className="flex flex-col gap-3 p-4   "
                 >
                     <h2 className="text-xl  font-bold mb-4   text-sky-900">Add Task</h2>
