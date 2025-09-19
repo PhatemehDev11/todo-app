@@ -36,7 +36,7 @@ function TaskList({ tasks }) {
                     {tasks.map(task => (
                         <div key={task.id} className="flex justify-between items-center mb-2  p-2">
                             <span>{task.title}</span>
-                            <span className={`${getStatuseBadget(task.status)}bg-red-300 text-red-900 px-2 py-1 rounded-full text-sm`}>
+                            <span className={`${getStatuseBadget(task.status)}  px-2 py-1 rounded-full text-sm`}>
                                 {getStatusLabel(task.status)}
                             </span>
                         </div>
