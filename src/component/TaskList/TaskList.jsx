@@ -6,18 +6,27 @@ function TaskList({ tasks }) {
     console.log("Tasks in TodoList:", tasks);
 
 
-    const getStatuseBadget = (atatus) => {
-        switch (atatus) {
+    const getStatuseBadget = (status) => {
+        switch (status) {
             case "not-started":
-                return "bg-red-300 text-red-900";
+                return `bg-red-300 text-red-900`;
             case "in-progress":
-                return "bg-yellow-300 text-yellow-900";
+                return `bg-yellow-300 text-yellow-900`;
             case "completed":
-                return "bg-green-400 text-white";
+                return `bg-green-400 text-white`;
             default:
-                return "bg-gray-200 text-gray-800";
+                return `bg-gray-200 text-gray-800`;
         }
-    }
+    };
+
+    const getStatusLabel = (status) => {
+        switch (status) {
+          case "not-started": return "Not Started";
+          case "in-progress": return "In Progress";
+          case "completed": return "Completed";
+          default: return "Unknown";
+        }
+      };
 
     return (
         <>
@@ -27,19 +36,12 @@ function TaskList({ tasks }) {
                     {tasks.map(task => (
                         <div key={task.id} className="flex justify-between items-center mb-2  p-2">
                             <span>{task.title}</span>
-                            <span className="bg-red-300 text-red-900 px-2 py-1 rounded-full text-sm ">{task.status}</span>
+                            <span className={`${getStatuseBadget(task.status)}bg-red-300 text-red-900 px-2 py-1 rounded-full text-sm`}>
+                                {getStatusLabel(task.status)}
+                            </span>
                         </div>
 
                     ))}
-
-                    <div className="flex justify-between items-center mb-2  p-2">
-                        <span>Task 4</span>
-                        <span className="bg-yellow-300 text-yellow-900 px-2 py-1 rounded-full text-sm">In Progress</span>
-                    </div>
-                    <div className="flex justify-between items-center mb-2  p-2">
-                        <span>Task 6</span>
-                        <span className="bg-green-400 text-white px-2 py-1 rounded-full text-sm">Completed</span>
-                    </div>
                 </div>
             </div>
         </>
