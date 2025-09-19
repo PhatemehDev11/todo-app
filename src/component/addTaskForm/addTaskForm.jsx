@@ -3,24 +3,31 @@ import { useState } from "react";
 import BaseButton from "../common/BaseButton";
 function AddTaskForm({ tasks, setTasks }) {
     const [title, setTitle] = useState("");
-    const [status, setStatuse] = useState("not-started");
+    const [status, setStatus] = useState("not-started");
 
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        if (!title.trim()) return;
-    }
+        e.preventDefault(); 
+      
+        if (!title.trim()) {
+            return; 
+          }
+      
+        const newTask = {
+          id: Date.now(),
+          title,
+          status,
+        };
+      
+        setTasks([...tasks, newTask]);
+      
+        setTitle("");
+        setStatus("not-started");
+      };
 
-   const newTask = {
-    id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
-    title,
-    status,
-   }
 
 
-   
-
-   setTasks([...tasks, newTask]);
+  
     return (
         <>
             <div className="md:w-[25%]  h-[20rem] bg-sky-100 rounded-lg shadow-md ">
@@ -39,7 +46,7 @@ function AddTaskForm({ tasks, setTasks }) {
                     <select
                         className="p-2 rounded border border-gray-300"
                         value={status}
-                        onChange={(e) => setStatuse(e.target.value)}
+                        onChange={(e) => setStatus(e.target.value)}
                     >
                         <option value="not-started">Not Started</option>
                         <option value="in-progress">In Progress</option>
