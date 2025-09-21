@@ -38,10 +38,10 @@ function TaskList({ tasks, setTasks }) {
                                 <span className="text-right ">{task.title}</span>
                             </div>
                             <div className="flex gap-3">
-                                <span className={`${getStatuseBadget(task.status)}  px-2 py-1 font-bold w-[75px] text-center rounded-full text-sm`}>
+                                <span className={`${getStatuseBadget(task.status)}  px-2 py-1 font-bold w-[75px]  h-[30px] text-center rounded-full text-sm`}>
                                 {task.status}
                                 </span>
-                                <TiDelete size={30} className="text-red-900 mt-[3px]"
+                                <TiDelete size={30} className="text-red-900 "
                                 onClick={() => deleteTask(task.id)}
                                 />
                             </div>
