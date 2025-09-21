@@ -1,3 +1,4 @@
+import { CgClose } from "react-icons/cg";
 
 
 function TaskList({ tasks }) {
@@ -36,9 +37,13 @@ function TaskList({ tasks }) {
                     {tasks.map(task => (
                         <div key={task.id} className="flex justify-between items-center mb-2  p-2">
                             <span>{task.title}</span>
+                            <div className="flex gap-3">
                             <span className={`${getStatuseBadget(task.status)}  px-2 py-1 rounded-full text-sm`}>
                                 {getStatusLabel(task.status)}
                             </span>
+                            <CgClose   size={20}  className="text-red-900 mt-[3px]"/>
+                            </div>
+                           
                         </div>
 
                     ))}

@@ -33,9 +33,8 @@ return(
     <TaskList  tasks={filteredTasks}/>
     <AddTaskForm    tasks={tasks} setTasks={setTasks} />
     </div>
-    
     </div>
-     </>
+    </>
 )
 }
 
