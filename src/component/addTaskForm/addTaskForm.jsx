@@ -3,7 +3,7 @@ import { useState } from "react";
 import BaseButton from "../common/BaseButton";
 function AddTaskForm({ tasks, setTasks }) {
     const [title, setTitle] = useState("");
-    const [status, setStatus] = useState("not-started");
+    const [status, setStatus] = useState("Easy");
 
 
     const handleSubmit = (e) => {
@@ -21,7 +21,7 @@ function AddTaskForm({ tasks, setTasks }) {
 
         setTasks([...tasks, newTask]);
         setTitle("");
-        setStatus("not-started");
+        setStatus("Easy");
     };
 
 
@@ -47,9 +47,9 @@ function AddTaskForm({ tasks, setTasks }) {
                         value={status}
                         onChange={(e) => setStatus(e.target.value)}
                     >
-                        <option value="not-started">Not Started</option>
-                        <option value="in-progress">In Progress</option>
-                        <option value="completed">Completed</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
                     </select>
                     <BaseButton Text="Add" />
                 </form>

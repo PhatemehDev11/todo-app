@@ -30,7 +30,7 @@ return(
     <div  className="w-full">
     <SearchBar  Search={Search}  setSearch={setSearch}/>
     <div  className="w-full  h-auto md:flex  md:gap-5  p-7 mt-10  md:mt-2 ">
-    <TaskList  tasks={filteredTasks}/>
+    <TaskList  tasks={filteredTasks}  setTasks={setTasks}/>
     <AddTaskForm    tasks={tasks} setTasks={setTasks} />
     </div>
     </div>
