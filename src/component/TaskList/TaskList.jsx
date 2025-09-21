@@ -1,4 +1,7 @@
 import { CgClose } from "react-icons/cg";
+import { FaDeleteLeft } from "react-icons/fa6";
+import { MdDeleteForever } from "react-icons/md";
+import { TiDelete } from "react-icons/ti";
 
 
 function TaskList({ tasks }) {
@@ -41,7 +44,7 @@ function TaskList({ tasks }) {
                             <span className={`${getStatuseBadget(task.status)}  px-2 py-1 rounded-full text-sm`}>
                                 {getStatusLabel(task.status)}
                             </span>
-                            <CgClose   size={20}  className="text-red-900 mt-[3px]"/>
+                            <TiDelete   size={30}  className="text-red-900 mt-[3px]"/>
                             </div>
                            
                         </div>
