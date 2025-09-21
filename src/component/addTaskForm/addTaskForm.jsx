@@ -3,7 +3,7 @@ import { useState } from "react";
 import BaseButton from "../common/BaseButton";
 function AddTaskForm({ tasks, setTasks }) {
     const [title, setTitle] = useState("");
-    const [status, setStatus] = useState("Easy");
+    const [status, setStatus] = useState("Low");
 
 
     const handleSubmit = (e) => {
@@ -21,7 +21,7 @@ function AddTaskForm({ tasks, setTasks }) {
 
         setTasks([...tasks, newTask]);
         setTitle("");
-        setStatus("Easy");
+        setStatus("Low");
     };
 
 
@@ -47,7 +47,7 @@ function AddTaskForm({ tasks, setTasks }) {
                         value={status}
                         onChange={(e) => setStatus(e.target.value)}
                     >
-                        <option value="Easy">Easy</option>
+                        <option value="Low">Low</option>
                         <option value="Medium">Medium</option>
                         <option value="High">High</option>
                     </select>
