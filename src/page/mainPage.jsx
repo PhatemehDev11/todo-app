@@ -3,6 +3,7 @@ import SearchBar from "../component/searchBar/searchBar";
 import TaskList from "../component/TaskList/TaskList";
 import {  useState, useEffect } from "react";
 import TaskData from "../data/Tasks.json"
+import EditModal from "../component/updateTaskForm/UpdateTask";
 
 function  MainPage() {
 
@@ -32,6 +33,7 @@ return(
     <div  className="w-full  h-auto md:flex  md:gap-5  p-7 mt-10  md:mt-2 ">
     <TaskList  tasks={filteredTasks}  setTasks={setTasks}/>
     <AddTaskForm    tasks={tasks} setTasks={setTasks} />
+    <EditModal/>
     </div>
     </div>
     </>

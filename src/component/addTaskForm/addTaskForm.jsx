@@ -51,7 +51,9 @@ function AddTaskForm({ tasks, setTasks }) {
                         <option value="Medium">Medium</option>
                         <option value="High">High</option>
                     </select>
-                    <BaseButton Text="Add" />
+                    
+                    <BaseButton   Text="Add" />
+
                 </form>
             </div>
 

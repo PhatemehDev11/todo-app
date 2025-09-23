@@ -1,6 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
 import React from "react";
-import { BsMenuApp, BsMenuButton,BsFillMenuAppFill } from "react-icons/bs";
 import { MdMenuOpen } from "react-icons/md";
 
 function Sidebar({ isOpen, isClose }) {
