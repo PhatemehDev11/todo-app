@@ -19,6 +19,8 @@ const filteredTasks = tasks.filter(task =>
   task.title.toLowerCase().includes(Search.toLowerCase())
 );
 
+const [edititingTask, setEditingTask] = useState(null);
+
 
 
 console.log("Filtered tasks:", filteredTasks);
