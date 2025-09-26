@@ -1,4 +1,5 @@
 
+import { GrEdit } from "react-icons/gr";
 import { TiDelete } from "react-icons/ti";
 
 
@@ -42,7 +43,8 @@ function TaskList({ tasks, setTasks }) {
                                  font-bold w-[75px]  h-[30px] text-center rounded-full text-sm`}>
                                     {task.status}
                                 </span>
-                                <TiDelete size={30} className="text-red-900 "
+                                <GrEdit size={25} className="text-sky-900  mt-1" />
+                                <TiDelete size={30} className="text-red-900"
                                     onClick={() => deleteTask(task.id)}
                                 />
                             </div>
