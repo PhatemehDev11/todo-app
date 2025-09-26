@@ -3,7 +3,7 @@ import { GrEdit } from "react-icons/gr";
 import { TiDelete } from "react-icons/ti";
 
 
-function TaskList({ tasks, setTasks }) {
+function TaskList({ tasks, setTasks ,  setEditingTask }) {
 
 
     console.log("Tasks in TodoList:", tasks);
@@ -43,7 +43,9 @@ function TaskList({ tasks, setTasks }) {
                                  font-bold w-[75px]  h-[30px] text-center rounded-full text-sm`}>
                                     {task.status}
                                 </span>
-                                <GrEdit size={25} className="text-sky-900  mt-1" />
+                                <GrEdit size={25} className="text-sky-900  mt-1" 
+                                  onClick={() => setEditingTask(task)}
+                                />
                                 <TiDelete size={30} className="text-red-900"
                                     onClick={() => deleteTask(task.id)}
                                 />
