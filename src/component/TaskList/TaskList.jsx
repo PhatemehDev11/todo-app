@@ -1,8 +1,9 @@
 
+import { GrEdit } from "react-icons/gr";
 import { TiDelete } from "react-icons/ti";
 
 
-function TaskList({ tasks, setTasks }) {
+function TaskList({ tasks, setTasks ,  setEditingTask }) {
 
 
     console.log("Tasks in TodoList:", tasks);
@@ -33,16 +34,20 @@ function TaskList({ tasks, setTasks }) {
                     <h2 className="text-xl font-bold mb-4  text-red-900">Task List</h2>
                     {tasks.map(task => (
                         <div key={task.id} className="flex justify-between items-center mb-2  p-2">
-                            <div  className="flex gap-3">
+                            <div className="flex gap-3">
                                 <div className="w-[10px]  h-[10px] rounded-xl bg-sky-900 mt-2"></div>
                                 <span className="text-right ">{task.title}</span>
                             </div>
                             <div className="flex gap-3">
-                                <span className={`${getStatuseBadget(task.status)}  px-2 py-1 font-bold w-[75px]  h-[30px] text-center rounded-full text-sm`}>
-                                {task.status}
+                                <span className={`${getStatuseBadget(task.status)}  px-2 py-1
+                                 font-bold w-[75px]  h-[30px] text-center rounded-full text-sm`}>
+                                    {task.status}
                                 </span>
-                                <TiDelete size={30} className="text-red-900 "
-                                onClick={() => deleteTask(task.id)}
+                                <GrEdit size={25} className="text-sky-900  mt-1" 
+                                  onClick={() => setEditingTask(task)}
+                                />
+                                <TiDelete size={30} className="text-red-900"
+                                    onClick={() => deleteTask(task.id)}
                                 />
                             </div>
 
