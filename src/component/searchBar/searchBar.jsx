@@ -6,7 +6,7 @@ function SearchBar({ Search, setSearch }) {
       <>
          <div className="w-[100%]   h-[7rem]  md:h-[4rem]  p-4 flex   flex-col  md:flex-row gap-2   ">
             <input type="text"
-               placeholder="input Task Title"
+               placeholder="Search Task"
                className="w-[100%] md:w-[80%] lg:w-[85%]  xl:w-[89%] h-[2rem]   bg-gray-200   p-7 
                rounded-full border-0  shadow-md placeholder-gray-600  focus:outline-none"
                value={Search}
