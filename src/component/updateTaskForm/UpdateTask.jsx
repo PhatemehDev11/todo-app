@@ -17,7 +17,7 @@ function EditModal({ task, setTasks , onClose }) {
     return (
         <>
             <div className="fixed inset-0 bg-black bg-opacity-70  transition-opacity
-           du   ration-300  flex items-center justify-center  ">
+           duration-300  flex items-center justify-center  ">
                 <div className="w-[20rem]  h-[18rem]  bg-sky-200  rounded-2xl p-3">
                     <h2 className="text-xl font-bold text-sky-900 mb-4">Edit Task</h2>
                     <form

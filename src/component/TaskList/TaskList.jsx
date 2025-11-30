@@ -43,10 +43,10 @@ function TaskList({ tasks, setTasks ,  setEditingTask }) {
                                  font-bold w-[75px]  h-[30px] text-center rounded-full text-sm`}>
                                     {task.status}
                                 </span>
-                                <GrEdit size={25} className="text-sky-900  mt-1" 
+                                <GrEdit size={25} className="text-sky-900  mt-1  cursor-pointer" 
                                   onClick={() => setEditingTask(task)}
                                 />
-                                <TiDelete size={30} className="text-red-900"
+                                <TiDelete size={30} className="text-red-900  cursor-pointer"
                                     onClick={() => deleteTask(task.id)}
                                 />
                             </div>

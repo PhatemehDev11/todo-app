@@ -32,7 +32,7 @@ function MainPage() {
     <>
       <div className="w-full">
         <SearchBar Search={Search} setSearch={setSearch} />
-        <div className="w-full  h-auto md:flex  md:gap-5  p-7 mt-10  md:mt-2 ">
+        <div className="w-full  h-auto flex gap-5 flex  p-7 mt-10  md:mt-2 md:flex-row  flex-col-reverse  ">
           <TaskList tasks={filteredTasks} setTasks={setTasks}   setEditingTask={setEditingTask}  />
           <AddTaskForm tasks={tasks} setTasks={setTasks} />
           {editingTask && (
