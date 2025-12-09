@@ -1,6 +1,8 @@
 
 import { useState } from "react";
 import BaseButton from "../common/BaseButton";
+import toast from "react-hot-toast";
+
 function AddTaskForm({ tasks, setTasks }) {
     const [title, setTitle] = useState("");
     const [status, setStatus] = useState("Low");
@@ -20,6 +22,7 @@ function AddTaskForm({ tasks, setTasks }) {
         };
 
         setTasks([...tasks, newTask]);
+        toast.success("Task added successfully!");
         setTitle("");
         setStatus("Low");
     };

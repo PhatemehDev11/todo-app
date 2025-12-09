@@ -1,5 +1,5 @@
 import BaseButton from "../common/BaseButton";
-
+import toast from "react-hot-toast";
 
 
 function DeleteModal({task , onConfirm, onClose}) {
@@ -15,7 +15,8 @@ function DeleteModal({task , onConfirm, onClose}) {
                             type="submit"
                             onClick={() => {
                                 onConfirm(task.id);
-                                onClose;
+                                toast.error("Task deleted!");
+                                onClose();
                             }}
                         >
                             Delete

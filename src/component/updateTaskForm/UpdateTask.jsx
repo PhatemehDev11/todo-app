@@ -1,5 +1,6 @@
 import { useState } from "react";
 import BaseButton from "../common/BaseButton";
+import toast from "react-hot-toast";
 
 function EditModal({ task, setTasks , onClose }) {
 
@@ -12,6 +13,7 @@ function EditModal({ task, setTasks , onClose }) {
         setTasks(prev => prev.map(t =>
             t.id === task.id ? { ...t, title, status } : t
         ));
+        toast.success("Task updated!");
           onClose();
     }
     return (
