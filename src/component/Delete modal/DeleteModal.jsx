@@ -16,7 +16,7 @@ function DeleteModal({task , onConfirm, onClose}) {
                             onClick={() => {
                                 onConfirm(task.id);
                                 toast.error("Task deleted!");
-                                onClose;
+                                onClose();
                             }}
                         >
                             Delete
