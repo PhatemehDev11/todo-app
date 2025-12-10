@@ -22,7 +22,7 @@ function DeleteModal({task , onConfirm, onClose}) {
                             Delete
                         </button  >
                         <button 
-                         className="bg-red-700 hover:bg-sky-700 text-white p-2 rounded w-[9rem] "
+                         className="bg-red-700 hover:bg-red-600 text-white p-2 rounded w-[9rem] "
                          onClick={onClose}
                         >
                            cancle

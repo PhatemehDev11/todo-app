@@ -48,11 +48,11 @@ function EditModal({ task, setTasks, onClose }) {
           <div className="flex justify-between mt-4  gap-3">
 
           <button type="submit"
-              className="bg-sky-700 hover:bg-sky-700 text-white p-2 rounded w-[9rem]">
+              className="bg-sky-700 hover:bg-sky-600 text-white p-2 rounded w-[9rem]">
               Save
             </button>
             <button type="button" onClick={onClose}
-              className="bg-red-700 text-white px-3 py-1 w-[9rem] rounded">
+              className="bg-red-700  hover:bg-red-600  text-white px-3 py-1 w-[9rem] rounded">
               Cancel
             </button>
 
