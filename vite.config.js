@@ -24,7 +24,25 @@ export default defineConfig({
             type: 'image/png'
           }
         ]
-      }
+      },
+      workbox: {
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/api\.ToDoList\.com\/.*/i,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'ToDoList-cache',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60, // 1 ساعت
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+        ],
+      },
     })
   ]
 })
