@@ -30,3 +30,4 @@ function SearchBar({ Search, setSearch }) {
 }
 
 export default SearchBar;
+

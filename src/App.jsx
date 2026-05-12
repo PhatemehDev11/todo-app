@@ -4,7 +4,6 @@ import Sidebar from './component/sidebar/sidebar'
 import MainPage from './page/mainPage';
 import AppRouter from './Router/react-App-Router';
 import { Toaster } from 'react-hot-toast';
-import Login from './component/login/login';
 function App() {
 
 
@@ -12,7 +11,6 @@ function App() {
     <>
      <Toaster position="top-center" />
      <AppRouter/>
-     <Login/>
     </>
   )
 }

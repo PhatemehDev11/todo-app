@@ -36,3 +36,4 @@ function DeleteModal({task , onConfirm, onClose}) {
 }
 
 export default DeleteModal;
+
