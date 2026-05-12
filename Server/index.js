@@ -1,22 +1,22 @@
+require("dotenv").config()
+
 const express = require("express")
 const cors = require("cors")
+const mongoose = require("mongoose")
 
 const authRoutes = require("./routes/authRoutes")
-
-app.use("/api/auth", authRoutes)
-
 
 const app = express()
 
 app.use(cors())
 app.use(express.json())
 
-app.get("/", (req, res) => {
-  res.json({ message: "API running" })
-})
+app.use("/api/auth", authRoutes)
 
-const PORT = 5000
+mongoose.connect("mongodb://127.0.0.1:27017/todo-db")
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.log(err))
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
+app.listen(5000, () => {
+  console.log("Server running on port 5000")
 })
