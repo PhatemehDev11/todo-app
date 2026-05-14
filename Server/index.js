@@ -8,7 +8,10 @@ const authRoutes = require("./routes/authRoutes")
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+  origin: 'http://localhost:5173', // آدرس Frontend
+  credentials: true
+}))
 app.use(express.json())
 
 app.use("/api/auth", authRoutes)
