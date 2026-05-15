@@ -1,17 +1,17 @@
-require("dotenv").config()
+require("dotenv").config();
 
-const express = require("express")
-const cors = require("cors")
-const mongoose = require("mongoose")
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
 
-const authRoutes = require("./routes/authRoutes")
+const authRoutes = require("./routes/authRoutes");
 const todoRoutes = require("./routes/todos");
 const authMiddleware = require("./middleware/authMiddleware");
 
 const app = express()
 
 app.use(cors({
-  origin: 'http://localhost:5173', // آدرس Frontend
+  origin: 'http://localhost:5173', 
   credentials: true
 }))
 app.use(express.json())
