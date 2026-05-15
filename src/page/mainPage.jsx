@@ -22,12 +22,12 @@ function MainPage() {
       if (data.message === "Unauthorized") { navigate("/login"); return; }
       setTasks(data);
     });
-  }, []);
+  }, [navigate]);
 
   const filteredTasks = tasks.filter(task =>
-    task.title.toLowerCase().includes(Search.toLowerCase())
+    task.title && task.title.toLowerCase().includes(Search.toLowerCase())
   );
-
+  
   const handleDelete = async (id) => {
     try {
       await todoService.delete(id);

@@ -14,7 +14,7 @@ function DeleteModal({task , onConfirm, onClose}) {
                             className="bg-sky-600 hover:bg-sky-700 text-white p-2 rounded w-[9rem]"
                             type="submit"
                             onClick={() => {
-                                onConfirm(task.id);
+                                onConfirm(task._id);
                                 toast.error("Task deleted!");
                                 onClose();
                             }}

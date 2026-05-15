@@ -11,11 +11,15 @@ function AddTaskForm({ setTasks }) {
     e.preventDefault();
     if (!title.trim()) return;
 
-    const newTask = await todoService.create({ title, status });
-    setTasks(prev => [...prev, newTask]);
-    toast.success("Task added successfully!");
-    setTitle("");
-    setStatus("Low");
+    try {
+      const newTask = await todoService.create({ title, status });
+      setTasks(prev => [...prev, newTask]);
+      toast.success("Task added successfully!");
+      setTitle("");
+      setStatus("Low");
+    } catch (error) {
+      toast.error("Failed to add task");
+    }
   };
 
   return (

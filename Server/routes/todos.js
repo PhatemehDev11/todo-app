@@ -7,10 +7,10 @@ router.use(authMiddleware);
 
 router.get('/', async (req, res) => {
     try {
-        const todos = await Todo.find({ userId: req.userId }).sort({ createdAt: -1 });
+        const todos = await Todo.find({ userId: req.user.id }).sort({ createdAt: -1 });
         
         const formattedTodos = todos.map(todo => ({
-            id: todo._id,
+            _id: todo._id,
             title: todo.title,
             completed: todo.completed,
             status: todo.status,
@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
         }
 
         const newTodo = new Todo({
-            userId: req.userId,
+            userId: req.user.id,
             title: title.trim(),
             status
         });
@@ -44,7 +44,7 @@ router.post('/', async (req, res) => {
         await newTodo.save();
 
         res.status(201).json({
-            id: newTodo._id,
+            _id: newTodo._id,
             title: newTodo.title,
             completed: newTodo.completed,
             status: newTodo.status,
@@ -55,19 +55,17 @@ router.post('/', async (req, res) => {
     }
 });
 
-
 router.put('/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const { title, completed, status } = req.body;
 
-        const todo = await Todo.findOne({ _id: id, userId: req.userId });
+        const todo = await Todo.findOne({ _id: id, userId: req.user.id });
 
         if (!todo) {
             return res.status(404).json({ message: 'تسک یافت نشد' });
         }
 
-      
         if (status && !['Low', 'Medium', 'High'].includes(status)) {
             return res.status(400).json({ message: 'مقدار status باید Low، Medium یا High باشد' });
         }
@@ -79,7 +77,7 @@ router.put('/:id', async (req, res) => {
         await todo.save();
 
         res.json({
-            id: todo._id,
+            _id: todo._id,
             title: todo.title,
             completed: todo.completed,
             status: todo.status,
@@ -90,12 +88,11 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-
 router.delete('/:id', async (req, res) => {
     try {
         const { id } = req.params;
 
-        const todo = await Todo.findOneAndDelete({ _id: id, userId: req.userId });
+        const todo = await Todo.findOneAndDelete({ _id: id, userId: req.user.id });
 
         if (!todo) {
             return res.status(404).json({ message: 'تسک یافت نشد' });
