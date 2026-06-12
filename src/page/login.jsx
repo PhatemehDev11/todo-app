@@ -23,14 +23,14 @@ function Login() {
   };
 
   return (
-    <div className=" flex w-full h-full  items-center">
+    <div className=" flex w-full h-full  items-center  bg-red-50">
 
       <img className="  h-[full]  w-[33%]   hidden  lg:flex " src={woman} alt="" />
 
 
       <div className="h-[40rem]   md:h-[35rem] w-full   lg:w-[60%]  flex flex-col items-center  justify-around ">
         <div className="w-[80%]   md:w-[50%]">
-          <h1 className="text-left  text-4xl  text-pink-400 ">Login</h1>
+          <h1 className="text-left  text-4xl  text-red-700 ">Login</h1>
         </div>
 
 
@@ -39,20 +39,20 @@ function Login() {
           <label htmlFor="" className="block mb-[10px]  text-xl">Email:</label>
           <input type="email" placeholder="Enter your email"
             value={email} onChange={(e) => setEmail(e.target.value)}
-            className="w-full h-[3rem] rounded-[1rem]  bg-[#A8DFED]  p-3   placeholder-gray-500" />
+            className="w-full h-[3rem] rounded-[1rem] bg-sky-200  p-3   placeholder-gray-500" />
         </div>
-
+      
 
         <div className="w-[80%]   md:w-[50%] " >
           <label htmlFor="" className="block  mb-[10px]  mt-[2rem]  text-xl">password:</label>
           <input type="password" placeholder="Enter your password"
             value={password} onChange={(e) => setPassword(e.target.value)}
-            className="w-full  h-[3rem] rounded-[1rem]  bg-[#A8DFED]  p-3   placeholder-gray-500" />
+            className="w-full  h-[3rem] rounded-[1rem] bg-sky-200 p-3   placeholder-gray-500" />
         </div>
 
 
         {error && <p>{error}</p>}
-        <button onClick={handleLogin} className="w-[6rem]  h-[3rem]  bg-pink-400 border-0 text-white  rounded-[40px]">Login</button>
+        <button onClick={handleLogin} className="w-[6rem]  h-[3rem]  bg-red-700 border-0 text-white  rounded-[40px]">Login</button>
 
 
         <div className="w-[22rem]  h-[3rem] flex   items-center justify-around">
