@@ -15,12 +15,12 @@ export const authService = {
       body: JSON.stringify({ email, password }),
     }).then(r => r.json()),
 
-  register: (email, password) =>
-    fetch(`${BASE_URL}/auth/register`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
-    }).then(r => r.json()),
+    register: (username, email, password) =>
+      fetch(`${BASE_URL}/auth/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, email, password }),
+      }).then(r => r.json()),
 };
 
 export const todoService = {
