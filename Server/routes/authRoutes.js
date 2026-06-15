@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.post("/register", async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const {username , email, password } = req.body;
 
     const existingUser = await User.findOne({ email });
 
@@ -22,9 +22,8 @@ router.post("/register", async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = new User({
-      email,
-      password: hashedPassword,
-    });
+      username, email, password: hashedPassword
+     });
 
     await newUser.save();
 
@@ -43,8 +42,7 @@ router.post("/register", async (req, res) => {
 // LOGIN
 router.post("/login", async (req, res) => {
   try {
-    const { email, password } = req.body;
-
+    const { username, email, password } = req.body;
     const user = await User.findOne({ email });
 
     if (!user) {
