@@ -26,14 +26,17 @@ function Login() {
 
   const handleRegister = async () => {
     const data = await authService.register(username, email, password);
-    if (data.token) {
-      localStorage.setItem("token", data.token);
-      navigate("/");
+    if (data.message === "User registered successfully") {
+      localStorage.setItem("username", username); 
+      const loginData = await authService.login(email, password);
+      if (loginData.token) {
+        localStorage.setItem("token", loginData.token);
+        navigate("/");
+      }
     } else {
       setError(data.message || "Register failed");
     }
   };
-
   return (
     <div className="flex w-full h-full items-center bg-red-50">
       <img className="h-[full] w-[33%] hidden lg:flex" src={woman} alt="" />
