@@ -7,8 +7,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      devOptions: { enabled: true }, // برای تست در dev
-
+     
       manifest: {
         name: 'toDoList App',
         short_name: 'toDoList',
