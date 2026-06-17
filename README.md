@@ -132,5 +132,5 @@ npm run dev
 <p align="center">
   If you like this project, give it a ⭐ !
   <br/><br/>
-  Made with ❤️ and ☕ by <a href="https://github.com/PhatemehDev11">PhatemehDev11</a>
+  Made with ❤️☕ by <a href="https://github.com/PhatemehDev11">PhatemehDev11</a>
 </p>
