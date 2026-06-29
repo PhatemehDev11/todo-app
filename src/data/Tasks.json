@@ -1,9 +1,9 @@
 
   [
-    {"id" : 1 , "title" : "Task1" , "status" : "not-started"},
-    {"id" : 2 , "title" : "Task2" , "status" : "in-progress"},
-    {"id" : 3 , "title" : "Task3" , "status" : "completed"},
-    {"id" : 4 , "title" : "Task4" , "status" : "in-progress"},
-    {"id" : 5 , "title" : "Task5" , "status" : "not-started"},
-    {"id" : 6 , "title" : "Task6" , "status" : "completed"}
+    {"id" : 1 , "title" : "Task1" , "status" : "low"},
+    {"id" : 2 , "title" : "Task2" , "status" : "medium"},
+    {"id" : 3 , "title" : "Task3" , "status" : "high"},
+    {"id" : 4 , "title" : "Task4" , "status" : "low"},
+    {"id" : 5 , "title" : "Task5" , "status" : "medium"},
+    {"id" : 6 , "title" : "Task6" , "status" : "high"}
   ]
